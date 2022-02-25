@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=10">
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+        <style>
+        </style>
+
+    </head>
+
+    <body>
+        <div id="components-demo">
+            <button-counter></button-counter>
+            <blog-post title="My journey with Vue"></blog-post>
+            <blog-post title="Blogging with Vue"></blog-post>
+            <blog-post title="Why Vue is so fun"></blog-post>
+        </div>
+        <hr>
+        <div id="blog-post-demo">
+            <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:title="post.title">
+            </blog-post>
+        </div>
+    
+        <script src="dia2_bis.js"></script>
+
+    </body>
+</html>

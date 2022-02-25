@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=10">
+        <title>Document</title>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1>{{titulo}}</h1>
+            <h3>Nombre de Usuario: {{this.nombreUsuario}}</h3>
+            <p>Valor del contador: {{counter}}</p>
+            
+            <br><br>
+            <hr>
+
+            <h2>Listado de operaciones:</h2>
+            <button v-on:click="sumaContador()">Sumar</button>
+            <button v-on:click="restaContador()">Restar</button>
+            <button v-on:click="multiplicaContador()">Multiplicar</button>
+            <button v-on:click="divideContador()">Dividir</button>
+
+            <br><br>
+
+            <a v-bind:href="url" target="_blank">Clicar aquí para entrar a Google.</a>
+
+            <br><br>
+            <hr>
+
+            <p>Listado de alumnos:</p>
+            <ul>
+                <li v-for="alumno of estudiantes">
+                    <span v-if="alumno.sexo === 'H'">El alumno {{alumno.nombre}} tiene nota media {{alumno.notaMedia}} </span>
+                    <span v-if="alumno.sexo === 'M'">La alumna {{alumno.nombre}} tiene nota media {{alumno.notaMedia}} </span>
+                </li>
+            </ul>
+            <br>
+
+            <p>Listado de alumnos aprobados:</p>
+            <ul>
+                <li v-for="alumno of estudiantes">
+                    <span v-if="alumno.sexo === 'H' && alumno.notaMedia >= 5">{{alumno.nombre}} está aprobado. </span>
+                    <span v-if="alumno.sexo === 'M' && alumno.notaMedia >= 5">{{alumno.nombre}} está aprobada. </span>
+                </li>
+            </ul>
+            <br>
+
+            <p>Listado de alumnos activos:</p>
+            <ul>
+                <li v-for="alumno of estudiantes">
+                    <span v-if="alumno.sexo === 'H' && alumno.activo">{{alumno.nombre}} está activo. </span>
+                    <span v-if="alumno.sexo === 'M' && alumno.activo">{{alumno.nombre}} está activa. </span>
+                </li>
+            </ul>
+            
+            <br><br>
+            <hr>
+
+            <p>Botones de saludo:</p>
+
+            <button v-on:click="saludar1()">Saludar alert</button>
+            <button v-on:click="saludar2($event)">Saludar console.log</button>
+
+
+
+        </div>
+
+
+        <script src="dia1.js"></script>
+        <script>
+           const mountedApp = app.mount('#app');
+        </script>
+
+    </body>
+</html>

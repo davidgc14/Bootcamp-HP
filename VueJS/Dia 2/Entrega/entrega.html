@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=10">
+        <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+        <style>
+        </style>
+
+    </head>
+
+    <body>
+
+
+        <div id="componentes">
+
+            <p>Todos los ciudadanos.</p>
+            <list-item1 title="Juan"></list-item1>
+            <list-item1 title="Pedro"></list-item1>
+            <list-item1 title="Maria"></list-item1>
+            <list-item1 title="Jose"></list-item1>
+            <list-item1 title="Ana"></list-item1>
+            <list-item1 title="Maria"></list-item1>
+            <list-item1 title="Juan"></list-item1>
+            <list-item1 title="Pedro"></list-item1>
+            <list-item1 title="Maria"></list-item1>
+            <list-item1 title="Jose"></list-item1>
+
+
+
+            <p>Ciudadanos mayores de edad.</p>
+            <list-item2 
+                v-for="ciudadano in ciudadanos"
+                v-if="ciudadano.edad >= 18"
+                v-bind:title="ciudadano.nombre"
+                v-bind:city="ciudadano.ciudad">
+            </list-item2>
+            <hr>
+
+            <ol>
+                <list-item1
+                    v-for="ciudadano in ciudadanos"
+                    v-bind:key="ciudadano.id"
+                    v-bind:title="ciudadano.ciudad">
+
+                </list-item1>
+            </ol>
+        </div>
+
+        <hr>
+
+    
+        <script src="entrega.js"></script>
+
+    </body>
+</html>

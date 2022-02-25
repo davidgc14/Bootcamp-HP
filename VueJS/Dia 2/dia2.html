@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=10">
+        <title>Document</title>
+        <script src="https://unpkg.com/vue@next"></script>
+
+        <style>
+        </style>
+
+    </head>
+
+    <body>
+        <div id="app">
+            <button-counter></button-counter>
+
+            <br>
+
+            <blog-post title="Mira que bonito todo"></blog-post>
+            
+            <blog-post-2 
+                v-for="post in posts" 
+                v-bind:key="post.id" 
+                v-bind:title="post.title">
+            </blog-post-2>
+
+            
+        </div>
+
+
+
+
+
+        <script src="dia2.js"></script>
+        <script>
+           const mountedApp = app.mount('#app');
+        </script>
+
+    </body>
+</html>

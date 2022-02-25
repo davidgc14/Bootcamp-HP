@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=10">
+        <title>Document</title>
+        <script src="https://unpkg.com/vue@next"></script>
+
+        <style>
+            .v-for-example {
+                margin: 0 auto;
+                width: 300px;
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+        <div id="app">
+            <h1>{{titulo}}</h1>
+            <p>{{counter}}</p>
+
+            <hr>
+            <br/>
+            <p v-if="visible">Hola que tal?</p>
+        </div>
+
+        <script>
+            const mountedApp = app.mount('#app');
+        </script>
+
+        <a v-bind:href="url" target="_blank">Enlace para web</a>
+        <img v-bind:src="urlImage" alt='Foto aleatoria'>
+
+
+        <br><br>
+        <ul>
+            <li v-for="item of ciudadanos">
+                <span v-if="item.gender === 'M'">El ciudadano {{item.nombre}} tiene {{item.edad}} años y vive en {{item.ciudad}}</span>
+                <span v-if="item.gender === 'W'">La ciudadana {{item.nombre}} tiene {{item.edad}} años y vive en {{item.ciudad}}</span>
+            </li>
+        </ul>
+
+
+        <br><br>
+        <button v-on:click="sayHello()">Di hola!</button>
+        <button v-on:click="sayHelloEvent($event)">Di hola otra vez!</button>
+        <button v-on:click="sumamosContador()">Sumar</button>
+
+
+
+        <br><br><br><br><br>
+        <button v-on:click="counter += 1">Incrementar</button>
+        <button v-on:click="counter -= 1">Decrementar</button>
+
+       <script src="dia1.js"></script>
+        <script>
+           const mountedApp = app.mount('#app');
+        </script> 
+
+    </body>
+</html>
